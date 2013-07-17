@@ -29,9 +29,9 @@ public final class windows_ru extends ListResourceBundle {
             { "FileChooser.saveInLabel.textAndMnemonic", "Папка:" },
             { "FileChooser.upFolderAccessibleName", "Вверх" },
             { "FileChooser.upFolderToolTip.textAndMnemonic", "Переход на один уровень вверх" },
-            { "FileChooser.viewMenuButtonAccessibleName", "Показать меню" },
-            { "FileChooser.viewMenuButtonToolTipText", "Показать меню" },
-            { "FileChooser.viewMenuLabel.textAndMnemonic", "Меню" },
+            { "FileChooser.viewMenuButtonAccessibleName", "Вид" },
+            { "FileChooser.viewMenuButtonToolTipText", "Вид" },
+            { "FileChooser.viewMenuLabel.textAndMnemonic", "Вид" },
         };
     }
 }

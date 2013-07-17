@@ -5,7 +5,7 @@ import java.util.ListResourceBundle;
 public final class motif_ru extends ListResourceBundle {
     protected final Object[][] getContents() {
         return new Object[][] {
-            { "FileChooser.acceptAllFileFilter.textAndMnemonic", "*" },
+            { "FileChooser.acceptAllFileFilter.textAndMnemonic", "Все файлы" },
             { "FileChooser.cancelButton.textAndMnemonic", "Отмена" },
             { "FileChooser.cancelButtonToolTip.textAndMnemonic", "Отменить выбор файла." },
             { "FileChooser.enterFileNameLabel.textAndMnemonic", "Введите имя файла:" },
