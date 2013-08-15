@@ -1,7 +1,7 @@
 package test;
 
 import java.awt.Component;
-import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class Frame extends JFrame
 	
     public void showWindow()
     {    	
-        this.getContentPane().setLayout( new FlowLayout() );
+        this.getContentPane().setLayout( new GridLayout(0,2) );
         //
         final LookAndFeelInfo[] lafis = UIManager.getInstalledLookAndFeels();
         final JComboBox<LookAndFeelInfo> cbLafs = new JComboBox<LookAndFeelInfo>();

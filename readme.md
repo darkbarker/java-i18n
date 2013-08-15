@@ -29,13 +29,13 @@ com/sun/swing/internal/plaf/basic/resources/basic_ru.properties
 com/sun/swing/internal/plaf/metal/resources/metal_ru.properties
 com/sun/swing/internal/plaf/synth/resources/synth_ru.properties 
 
+sun/awt/resources/awt.properties
 sun/print/resources/serviceui_ru.properties
 
 exclude:
 already translated (CalendarData, CurrencyNames, LocaleNames)
 com/sun/accessibility/internal/resources/accessibility.properties 
 com/sun/rowset/RowSetResourceBundle.properties
-sun/awt/resources/awt.properties(?)
 sun/launcher/resources/launcher.properties
 sun/management/resources/agent.properties
 sun/rmi/registry/resources/rmiregistry.properties
