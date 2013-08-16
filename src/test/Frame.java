@@ -105,7 +105,6 @@ public class Frame extends JFrame
 				@Override
 				public void actionPerformed( ActionEvent e )
 				{
-					Frame.this.setLocale( Locale.getDefault() );
 					viewer.view( Frame.this );
 				}
 			});
@@ -152,7 +151,8 @@ class LookAndFeelInfoRenderer
 {  
     private final ListCellRenderer<? super LookAndFeelInfo> delegate;
 
-    public LookAndFeelInfoRenderer(ListCellRenderer<? super LookAndFeelInfo> delegate) {
+    public LookAndFeelInfoRenderer(ListCellRenderer<? super LookAndFeelInfo> delegate)
+    {
         this.delegate = delegate;
     }
 

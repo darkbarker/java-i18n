@@ -11,7 +11,6 @@ public class PrintDialogVeiwer implements Veiwer
 	{
 		PrinterJob printerJob = PrinterJob.getPrinterJob();
 		printerJob.printDialog();
-		
 	}
 
 	@Override
