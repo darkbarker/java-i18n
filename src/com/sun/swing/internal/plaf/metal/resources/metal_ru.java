@@ -1,19 +1,20 @@
 /* This file is encoded as UTF-8 */
 
-package com.sun.java.swing.plaf.windows.resources;
+package com.sun.swing.internal.plaf.metal.resources;
 
 import java.util.ListResourceBundle;
 
 /**
- * <p>Resource bundle for the Windows Look and Feel with "ru" locale.</p>
- * <p>Composed using "windows.properties" and "windows_ja.properties" files from
- * "com.sun.java.swing.plaf.windows.resources" package of OpenJDK 8 as
+ * <p>Resource bundle for the Metal Look and Feel with "ru" locale.</p>
+ * <p>
+ * Composed using "metal.properties" and "metal_ja.properties" files from
+ * "com.sun.swing.internal.plaf.metal.resources" package of OpenJDK 8 as
  * prototypes.</p>
  * <p>Currently, the following components need this for support:</p>
  * <ul>
  * <li>FileChooser</li>
  * </ul>
- * <p>MNEMONIC NOTE:</p>
+ * <p>MNEMONIC NOTE</p>
  * <p>Refer to the note in basic_ru.java for a description as to what the
  * mnemonics correspond to and how to calculate them.</p>
  * 
@@ -21,20 +22,20 @@ import java.util.ListResourceBundle;
  * @author darkbarker ( https://github.com/darkbarker )
  * @author Sergey Ushakov ( https://github.com/s-n-ushakov , s-n-ushakov@yandex.ru )
  */
-public final class windows_ru extends ListResourceBundle {
+public final class metal_ru extends ListResourceBundle {
     protected final Object[][] getContents() {
         return new Object[][] {
-            // ############ FILE CHOOSER STRINGS #############
-            { "FileChooser.lookInLabel.textAndMnemonic", "Папка (&I):" }, // Look &in:
-            { "FileChooser.saveInLabel.textAndMnemonic", "Папка:" }, // Save in: // no native equivalent in Windows 8.1
-            { "FileChooser.fileNameLabel.textAndMnemonic", "Имя файла (&N):" }, // File &name:
+            // ############ File chooser strings #############
+            { "FileChooser.lookInLabel.textAndMnemonic", "Папка (&I):" }, // Look &In:
+            { "FileChooser.saveInLabel.textAndMnemonic", "Сохранить в:" }, // Save In:
+            { "FileChooser.fileNameLabel.textAndMnemonic", "Имя файла (&N):" }, // File &Name:
             { "FileChooser.folderNameLabel.textAndMnemonic", "Имя папки (&N):" }, // Folder &name:
-            { "FileChooser.filesOfTypeLabel.textAndMnemonic", "Тип файла (&T):" }, // Files of &type: // wording verified against Windows 8.1 native dialog
-            { "FileChooser.upFolderToolTip.textAndMnemonic", "Переход на один уровень вверх" }, // Up One Level // Windows 8.1 native dialog has "Вверх до {parent_folder_name}"
+            { "FileChooser.filesOfTypeLabel.textAndMnemonic", "Тип файла (&T):" }, // Files of &Type:
+            { "FileChooser.upFolderToolTip.textAndMnemonic", "Переход на один уровень вверх" }, // Up One Level
             { "FileChooser.upFolderAccessibleName", "Вверх" }, // Up
-            { "FileChooser.homeFolderToolTip.textAndMnemonic", "Домашняя папка" }, // Home
-            { "FileChooser.homeFolderAccessibleName", "Домашняя папка" }, // Home
-            { "FileChooser.newFolderToolTip.textAndMnemonic", "Создание папки" }, // Create New Folder // wording verified against Windows 8.1 native dialog
+            { "FileChooser.homeFolderToolTip.textAndMnemonic", "Домашний каталог" }, // Home
+            { "FileChooser.homeFolderAccessibleName", "Домашний каталог" }, // Home
+            { "FileChooser.newFolderToolTip.textAndMnemonic", "Создание новой папки" }, // Create New Folder
             { "FileChooser.newFolderAccessibleName", "Новая папка" }, // New Folder
             { "FileChooser.newFolderActionLabel.textAndMnemonic", "Новая папка" }, // New Folder
             { "FileChooser.listViewButtonToolTip.textAndMnemonic", "Список" }, // List
@@ -42,8 +43,6 @@ public final class windows_ru extends ListResourceBundle {
             { "FileChooser.listViewActionLabel.textAndMnemonic", "Список" }, // List
             { "FileChooser.detailsViewButtonToolTip.textAndMnemonic", "Таблица" }, // Details
             { "FileChooser.detailsViewButtonAccessibleName", "Таблица" }, // Details
-            { "FileChooser.viewMenuButtonToolTipText", "Вид" }, // View Menu
-            { "FileChooser.viewMenuButtonAccessibleName", "Вид" }, // View Menu
             { "FileChooser.detailsViewActionLabel.textAndMnemonic", "Таблица" }, // Details
             { "FileChooser.refreshActionLabel.textAndMnemonic", "Обновить" }, // Refresh
             { "FileChooser.viewMenuLabel.textAndMnemonic", "Вид" }, // View
@@ -52,6 +51,12 @@ public final class windows_ru extends ListResourceBundle {
             { "FileChooser.fileTypeHeader.textAndMnemonic", "Тип" }, // Type
             { "FileChooser.fileDateHeader.textAndMnemonic", "Изменён" }, // Modified
             { "FileChooser.fileAttrHeader.textAndMnemonic", "Атрибуты" }, // Attributes
+
+            // ############ Used by MetalTitlePane if rendering window decorations############
+            { "MetalTitlePane.restore.titleAndMnemonic", "Восстановить (&R)" }, // &Restore
+            { "MetalTitlePane.iconify.titleAndMnemonic", "Свернуть (&E)" }, // Minimiz&e
+            { "MetalTitlePane.maximize.titleAndMnemonic", "Развернуть (&X)" }, // Ma&ximize
+            { "MetalTitlePane.close.titleAndMnemonic", "Закрыть (&C)" }, // &Close
         };
     }
 }

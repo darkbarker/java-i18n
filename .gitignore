@@ -1,3 +1,6 @@
-bin
-.settings
-builds/*.jar
+/-export/
+/.README.md.html
+/.classpath
+/.project
+/.settings/
+/bin/

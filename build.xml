@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project
+		name="java-i18n"
+		default="build-all"
+		basedir="."
+		>
+	<description>Translations of OpenJDK / JDK standard resources to languages
+			that are missing from official distributions.</description>
+	<tstamp />
+	<property name="product" value="java-i18n" />
+	<property name="deliverable-base" value="${product}-${DSTAMP}-usn" />
+	<property name="deliverable-src" value="${deliverable-base}-src" />
+	<property name="source-dir" value="${basedir}/src" />
+	<property name="classes-dir" value="${basedir}/bin" />
+	<property name="export-dir" value="${basedir}/-export" />
+	<property name="target" value="1.5" />
+	<property name="source" value="1.5" />
+	<property name="debuglevel" value="source,lines,vars" />
+
+	<path id="project.classpath">
+		<pathelement location="${classes-dir}" />
+	</path>
+
+	<presetdef name="jar-with-presets">
+		<jar destfile="">
+			<metainf dir=".">
+				<include name="NOTICE.txt"/>
+				<include name="LICENSE.GPLv2+CE.txt"/>
+			</metainf>
+			<manifest>
+				<attribute name="Implementation-Title" value="${product}" />
+				<attribute name="Implementation-Version" value="${DSTAMP}" />
+			</manifest>
+		</jar>
+	</presetdef>
+
+	<macrodef name="create-locale-jar">
+		<attribute name="locale" />
+		<sequential>
+			<echo message="${ant.project.name}: ${ant.file}: creating jar for '@{locale}' locale..." />
+			<jar-with-presets destfile="${export-dir}/${deliverable-base}-@{locale}.jar">
+				<fileset dir="${classes-dir}">
+					<include name="**/*_@{locale}.class" />
+					<!-- NOTE "en" files are included in every jar, as they
+							contain messages in English that are missing from
+							from official distributions
+							-->
+					<include name="**/*_en.class" />
+				</fileset>
+			</jar-with-presets>
+		</sequential>
+	</macrodef>
+
+	<target name="clean">
+		<delete dir="${classes-dir}" />
+		<delete dir="${export-dir}" />
+	</target>
+
+	<target name="init">
+		<mkdir dir="${classes-dir}" />
+		<mkdir dir="${export-dir}" />
+	</target>
+
+	<target name="build-classes" depends="init">
+		<echo message="${ant.project.name}: ${ant.file}: compiling..." />
+		<javac
+				debug="true"
+				debuglevel="${debuglevel}"
+				includeantruntime="false"
+				source="${source}"
+				target="${target}"
+				destdir="${classes-dir}"
+				>
+			<src path="${source-dir}" />
+			<classpath refid="project.classpath" />
+		</javac>
+	</target>
+
+	<target name="build-locale-jars-by-one" depends="build-classes">
+		<create-locale-jar locale="ru" />
+		<!-- add extra locales here... -->
+	</target>
+
+	<target name="build-locale-jar-all" depends="build-classes">
+		<echo message="${ant.project.name}: ${ant.file}: creating jar for all locales..." />
+		<jar-with-presets destfile="${export-dir}/${deliverable-base}-all.jar">
+			<fileset dir="${classes-dir}">
+				<include name="**/*_??.class" />
+			</fileset>
+		</jar-with-presets>
+	</target>
+
+	<target name="build-src" depends="init">
+		<echo message="${ant.project.name}: ${ant.file}: creating sources archive..." />
+		<zip destfile="${export-dir}/${deliverable-src}.zip">
+			<zipfileset dir="src" prefix="${deliverable-src}/src" />
+			<zipfileset file="build.xml" prefix="${deliverable-src}" />
+			<zipfileset file="CHANGELOG.txt" prefix="${deliverable-src}" />
+			<zipfileset file="LICENSE.GPLv2+CE.txt" prefix="${deliverable-src}" />
+			<zipfileset file="NOTICE.txt" prefix="${deliverable-src}" />
+			<zipfileset file="README.md" prefix="${deliverable-src}" />
+		</zip>
+	</target>
+
+	<target name="build-all"
+			depends="build-locale-jars-by-one,build-locale-jar-all,build-src" />
+</project>
